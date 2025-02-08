@@ -29,13 +29,17 @@ export default function Home() {
     if (!searchQuery) return true;
 
     const normalizedQuery = normalizeText(searchQuery);
-    return (
-      bhajan.number.toString().includes(normalizedQuery) ||
-      normalizeText(bhajan.title).includes(normalizedQuery) ||
-      normalizeText(bhajan.titleIso).includes(normalizedQuery) ||
-      normalizeText(bhajan.lyrics).includes(normalizedQuery) ||
-      normalizeText(bhajan.lyricsIso).includes(normalizedQuery)
-    );
+    const searchableText = [
+      bhajan.number.toString(),
+      normalizeText(bhajan.title),
+      normalizeText(bhajan.titleIso),
+      normalizeText(bhajan.lyrics),
+      normalizeText(bhajan.lyricsIso),
+      bhajan.description ? normalizeText(bhajan.description) : '',
+      bhajan.descriptionIso ? normalizeText(bhajan.descriptionIso) : ''
+    ].join(' ');
+
+    return searchableText.includes(normalizedQuery);
   });
 
   return (
@@ -46,7 +50,11 @@ export default function Home() {
           A collection of spiritual songs with dual-language support
         </p>
         <div className="mb-6">
-          <SearchBar query={searchQuery} onQueryChange={setSearchQuery} />
+          <SearchBar 
+            query={searchQuery} 
+            onQueryChange={setSearchQuery} 
+            placeholder="Search by number, title or lyrics..."
+          />
         </div>
         <BhajanList bhajans={filteredBhajans} />
       </div>

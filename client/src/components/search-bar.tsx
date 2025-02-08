@@ -5,9 +5,10 @@ import { Search } from "lucide-react";
 interface SearchBarProps {
   query: string;
   onQueryChange: (value: string) => void;
+  placeholder?: string;
 }
 
-export function SearchBar({ query, onQueryChange }: SearchBarProps) {
+export function SearchBar({ query, onQueryChange, placeholder = "Search bhajans..." }: SearchBarProps) {
   return (
     <div className="w-full max-w-sm">
       <Label htmlFor="search" className="sr-only">
@@ -17,7 +18,7 @@ export function SearchBar({ query, onQueryChange }: SearchBarProps) {
         <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
         <Input
           id="search"
-          placeholder="Search by number or title..."
+          placeholder={placeholder}
           value={query}
           onChange={(e) => onQueryChange(e.target.value)}
           className="pl-8"
