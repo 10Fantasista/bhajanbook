@@ -7,18 +7,18 @@ export function cn(...inputs: ClassValue[]) {
 
 // Common spelling variations for Sanskrit/Gujarati terms
 const commonVariations: Record<string, string[]> = {
-  'kr̥ṣṇa': ['krishna', 'krsna', 'krushna'],
-  'gaṇēśa': ['ganesh', 'ganesha', 'ganesa'],
-  'śiva': ['shiva', 'siva'],
-  'rāma': ['ram', 'rama'],
-  'ōm': ['om', 'aum'],
-  'viṣṇu': ['vishnu', 'visnu'],
-  'lakṣmī': ['lakshmi', 'laxmi'],
-  'dēvī': ['devi'],
-  'bhakti': ['bhakti'],
-  'māta': ['mata', 'matha'],
-  'pūjā': ['puja', 'pooja'],
-  'ārti': ['arti', 'aarti', 'arati']
+  'kr̥ṣṇa': ['krishna', 'krsna', 'krushna', 'krshn'],
+  'gaṇēśa': ['ganesh', 'ganesha', 'ganesa', 'ganpati', 'ganapati'],
+  'śiva': ['shiva', 'siva', 'shiv', 'siwa'],
+  'rāma': ['ram', 'rama', 'raam'],
+  'ōm': ['om', 'aum', 'ohm'],
+  'viṣṇu': ['vishnu', 'visnu', 'bishnu'],
+  'lakṣmī': ['lakshmi', 'laxmi', 'laksmi'],
+  'dēvī': ['devi', 'devee'],
+  'bhakti': ['bhakti', 'bhakth'],
+  'māta': ['mata', 'matha', 'maa'],
+  'pūjā': ['puja', 'pooja', 'pooja'],
+  'ārti': ['arti', 'aarti', 'arati', 'arthi']
 };
 
 // Remove diacritics and normalize text for searching
