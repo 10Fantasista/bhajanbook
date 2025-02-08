@@ -10,7 +10,7 @@ import BhajanPage from "@/pages/bhajan";
 import NotFound from "@/pages/not-found";
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     const root = window.document.documentElement;
