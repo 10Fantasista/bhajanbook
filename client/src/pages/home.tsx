@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BhajanList } from "@/components/bhajan-list";
 import { SearchBar } from "@/components/search-bar";
 import { cacheBhajans, getCachedBhajans } from "@/lib/storage";
+import { normalizeText } from "@/lib/utils";
 import type { Bhajan } from "@shared/schema";
 
 export default function Home() {
@@ -25,11 +26,15 @@ export default function Home() {
   });
 
   const filteredBhajans = bhajans.filter((bhajan) => {
-    const query = searchQuery.toLowerCase();
+    if (!searchQuery) return true;
+
+    const normalizedQuery = normalizeText(searchQuery);
     return (
-      bhajan.number.toString().includes(query) ||
-      bhajan.title.toLowerCase().includes(query) ||
-      bhajan.titleIso.toLowerCase().includes(query)
+      bhajan.number.toString().includes(normalizedQuery) ||
+      normalizeText(bhajan.title).includes(normalizedQuery) ||
+      normalizeText(bhajan.titleIso).includes(normalizedQuery) ||
+      normalizeText(bhajan.lyrics).includes(normalizedQuery) ||
+      normalizeText(bhajan.lyricsIso).includes(normalizedQuery)
     );
   });
 

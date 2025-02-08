@@ -27,7 +27,42 @@ export class MemStorage implements IStorage {
         description: "ગાંધીજીનું પ્રિય ભજન",
         descriptionIso: "gāndhījīnuṁ priya bhajana",
       },
-      // Add more sample bhajans as needed
+      {
+        number: 2,
+        title: "રઘુપતિ રાઘવ રાજા રામ",
+        titleIso: "raghupati rāghava rājā rāma",
+        lyrics: "રઘુપતિ રાઘવ રાજા રામ\nપતિત પાવન સીતા રામ\nઈશ્વર અલ્લાહ તેરો નામ\nસબકો સન્મતિ દે ભગવાન",
+        lyricsIso: "raghupati rāghava rājā rāma\npatita pāvana sītā rāma\nīśvara allāha tērō nāma\nsabakō sanmati dē bhagavāna",
+        description: "ગાંધીજીનું બીજું પ્રિય ભજન",
+        descriptionIso: "gāndhījīnuṁ bījuṁ priya bhajana",
+      },
+      {
+        number: 3,
+        title: "શ્રી કૃષ્ણ શરણં મમ",
+        titleIso: "śrī kr̥ṣṇa śaraṇaṁ mama",
+        lyrics: "શ્રી કૃષ્ણ શરણં મમ\nશ્રી કૃષ્ણ શરણં મમ\nહરે કૃષ્ણ હરે કૃષ્ણ\nકૃષ્ણ કૃષ્ણ હરે હરે",
+        lyricsIso: "śrī kr̥ṣṇa śaraṇaṁ mama\nśrī kr̥ṣṇa śaraṇaṁ mama\nharē kr̥ṣṇa harē kr̥ṣṇa\nkr̥ṣṇa kr̥ṣṇa harē harē",
+        description: "કૃષ્ણ શરણાગતિનું ભજન",
+        descriptionIso: "kr̥ṣṇa śaraṇāgatinuṁ bhajana",
+      },
+      {
+        number: 4,
+        title: "ઓમ જય શિવ ઓમકારા",
+        titleIso: "ōm jaya śiva ōmkārā",
+        lyrics: "ઓમ જય શિવ ઓમકારા\nપ્રભુ હર શિવ ઓમકારા\nબ્રહ્મા વિષ્ણુ સદાશિવ\nઅર્ધાંગી ધારા",
+        lyricsIso: "ōm jaya śiva ōmkārā\nprabhu hara śiva ōmkārā\nbrahmā viṣṇu sadāśiva\nardhāṅgī dhārā",
+        description: "શિવ આરતી",
+        descriptionIso: "śiva āratī",
+      },
+      {
+        number: 5,
+        title: "જય ગણેશ જય ગણેશ",
+        titleIso: "jaya gaṇēśa jaya gaṇēśa",
+        lyrics: "જય ગણેશ જય ગણેશ દેવા\nમાતા જાકી પાર્વતી પિતા મહાદેવા",
+        lyricsIso: "jaya gaṇēśa jaya gaṇēśa dēvā\nmātā jākī pārvatī pitā mahādēvā",
+        description: "ગણેશ વંદના",
+        descriptionIso: "gaṇēśa vandanā",
+      }
     ];
 
     sampleBhajans.forEach(bhajan => this.createBhajan(bhajan));
