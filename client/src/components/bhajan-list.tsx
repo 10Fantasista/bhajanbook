@@ -20,8 +20,8 @@ export function BhajanList({ bhajans }: BhajanListProps) {
                     {bhajan.number}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-1">{bhajan.title}</h3>
-                    <p className="text-muted-foreground">{bhajan.titleEnglish}</p>
+                    <h3 className="text-xl font-semibold mb-1 font-gujarati">{bhajan.title}</h3>
+                    <p className="text-muted-foreground font-iso">{bhajan.titleIso}</p>
                   </div>
                 </div>
               </CardContent>

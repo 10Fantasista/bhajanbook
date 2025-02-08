@@ -20,12 +20,12 @@ export class MemStorage implements IStorage {
     const sampleBhajans: InsertBhajan[] = [
       {
         number: 1,
-        title: "ॐ जय जगदीश हरे",
-        titleEnglish: "Om Jai Jagdish Hare",
-        lyrics: "ॐ जय जगदीश हरे\nस्वामी जय जगदीश हरे\nभक्त जनों के संकट\nदास जनों के संकट\nक्षण में दूर करे\nॐ जय जगदीश हरे",
-        lyricsEnglish: "Om Jai Jagdish Hare\nSwami Jai Jagdish Hare\nBhakt Jano Ke Sankat\nDaas Jano Ke Sankat\nKshan Men Dur Kare\nOm Jai Jagdish Hare",
-        description: "एक लोकप्रिय आरती",
-        descriptionEnglish: "A popular aarti",
+        title: "વૈષ્ણવ જન તો તેને કહીએ",
+        titleIso: "vaiṣṇava jana tō tēnē kahiē",
+        lyrics: "વૈષ્ણવ જન તો તેને કહીએ\nજે પીડ પરાઈ જાણે રે\nપર દુઃખે ઉપકાર કરે તો યે\nમન અભિમાન ન આણે રે",
+        lyricsIso: "vaiṣṇava jana tō tēnē kahiē\njē pīḍa parāī jāṇē rē\npara duḥkhē upakāra karē tō yē\nmana abhimāna na āṇē rē",
+        description: "ગાંધીજીનું પ્રિય ભજન",
+        descriptionIso: "gāndhījīnuṁ priya bhajana",
       },
       // Add more sample bhajans as needed
     ];
@@ -43,7 +43,7 @@ export class MemStorage implements IStorage {
 
   async createBhajan(insertBhajan: InsertBhajan): Promise<Bhajan> {
     const id = this.currentId++;
-    const bhajan: Bhajan = { ...insertBhajan, id };
+    const bhajan = { ...insertBhajan, id };
     this.bhajans.set(id, bhajan);
     return bhajan;
   }

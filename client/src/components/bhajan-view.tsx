@@ -17,7 +17,7 @@ export function BhajanView({ bhajan }: BhajanViewProps) {
 
   useEffect(() => {
     let animationFrame: number;
-    
+
     const scroll = () => {
       if (isScrolling && contentRef.current) {
         contentRef.current.scrollTop += scrollSpeed;
@@ -46,7 +46,7 @@ export function BhajanView({ bhajan }: BhajanViewProps) {
         >
           {isScrolling ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
         </Button>
-        
+
         <div className="flex items-center gap-2 flex-1">
           <Type className="h-4 w-4" />
           <Slider
@@ -62,18 +62,25 @@ export function BhajanView({ bhajan }: BhajanViewProps) {
       <Card>
         <CardContent className="p-6">
           <div ref={contentRef} className="overflow-y-auto max-h-[70vh]">
-            <h1 className="text-3xl font-bold mb-2">{bhajan.title}</h1>
-            <h2 className="text-xl text-muted-foreground mb-6">{bhajan.titleEnglish}</h2>
-            
+            <h1 className="text-3xl font-bold mb-2 font-gujarati">{bhajan.title}</h1>
+            <h2 className="text-xl text-muted-foreground mb-6 font-iso">{bhajan.titleIso}</h2>
+
+            {bhajan.description && (
+              <div className="mb-6">
+                <p className="font-gujarati">{bhajan.description}</p>
+                <p className="text-muted-foreground font-iso">{bhajan.descriptionIso}</p>
+              </div>
+            )}
+
             <div className="grid gap-8">
-              <div style={{ fontSize: `${fontSize}px` }}>
+              <div style={{ fontSize: `${fontSize}px` }} className="font-gujarati">
                 {bhajan.lyrics.split("\n").map((line, i) => (
                   <p key={i} className="mb-2">{line}</p>
                 ))}
               </div>
-              
-              <div style={{ fontSize: `${fontSize}px` }} className="text-muted-foreground">
-                {bhajan.lyricsEnglish.split("\n").map((line, i) => (
+
+              <div style={{ fontSize: `${fontSize}px` }} className="text-muted-foreground font-iso">
+                {bhajan.lyricsIso.split("\n").map((line, i) => (
                   <p key={i} className="mb-2">{line}</p>
                 ))}
               </div>

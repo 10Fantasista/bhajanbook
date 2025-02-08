@@ -5,12 +5,12 @@ import { z } from "zod";
 export const bhajans = pgTable("bhajans", {
   id: serial("id").primaryKey(),
   number: integer("number").notNull(),
-  title: text("title").notNull(),
-  titleEnglish: text("title_english").notNull(),
-  lyrics: text("lyrics").notNull(),
-  lyricsEnglish: text("lyrics_english").notNull(),
-  description: text("description"),
-  descriptionEnglish: text("description_english"),
+  title: text("title").notNull(), // Gujarati title
+  titleIso: text("title_iso").notNull(), // ISO 15919 transliteration
+  lyrics: text("lyrics").notNull(), // Gujarati lyrics
+  lyricsIso: text("lyrics_iso").notNull(), // ISO 15919 transliteration
+  description: text("description"), // Optional Gujarati description
+  descriptionIso: text("description_iso"), // Optional ISO 15919 description
 });
 
 export const insertBhajanSchema = createInsertSchema(bhajans).omit({ id: true });

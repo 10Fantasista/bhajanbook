@@ -10,4 +10,24 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  /* Add Gujarati font support */
+  @font-face {
+    font-family: 'Noto Sans Gujarati';
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;700&display=swap');
+  }
+
+  .font-gujarati {
+    font-family: 'Noto Sans Gujarati', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Font for ISO 15919 transliteration */
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap');
+  }
+
+  .font-iso {
+    font-family: 'Noto Sans', system-ui, -apple-system, sans-serif;
+  }
 }
